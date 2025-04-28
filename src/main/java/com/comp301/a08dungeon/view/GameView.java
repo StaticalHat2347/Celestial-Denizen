@@ -88,7 +88,6 @@ public class GameView implements FXComponent {
         root.setPrefSize(854, 480);                       // lock to your window size
         root.setCenter(playfield);
         root.setBottom(bottomBox);
-        root.setOnKeyPressed(this::keyPressed);
         root.setFocusTraversable(true);
         return root;
     }
