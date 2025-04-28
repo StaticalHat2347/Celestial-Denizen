@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 public class AppLauncher extends Application {
   @Override
   public void start(Stage stage) {
-        stage.show();
+      stage.setFullScreen(true);
+      stage.show();
   }
 }
