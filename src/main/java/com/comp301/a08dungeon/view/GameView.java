@@ -11,8 +11,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -67,6 +69,7 @@ public class GameView implements FXComponent {
         Button left  = new Button("←"); left.setOnAction(e -> controller.moveLeft());
         Button right = new Button("→"); right.setOnAction(e -> controller.moveRight());
 
+
         GridPane controlGrid = new GridPane();
         controlGrid.setHgap(5);
         controlGrid.setVgap(5);
@@ -85,6 +88,19 @@ public class GameView implements FXComponent {
         root.setPrefSize(854, 480);                       // lock to your window size
         root.setCenter(playfield);
         root.setBottom(bottomBox);
+        root.setOnKeyPressed(this::keyPressed);
+        root.setFocusTraversable(true);
         return root;
+    }
+    // USING KEYS IS BETTERRRRRR
+    public void keyPressed(KeyEvent e) {
+        switch (e.getCode()) {
+            case UP -> controller.moveUp();
+            case DOWN -> controller.moveDown();
+            case LEFT -> controller.moveLeft();
+            case RIGHT -> controller.moveRight();
+            default -> {}
+
+        }
     }
 }

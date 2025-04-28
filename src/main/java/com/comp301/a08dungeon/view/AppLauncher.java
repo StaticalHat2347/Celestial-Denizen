@@ -20,10 +20,12 @@ public class AppLauncher extends Application {
         View view = new View(controller, model, scene);
 
         scene.setRoot(view.render());
+        scene.setOnKeyPressed(view::keyPressed);
         scene.getStylesheets().add("dungeon.css");
         model.addObserver(view);
 
         stage.setScene(scene);
         stage.show();
+        scene.getRoot().requestFocus();
     }
 }

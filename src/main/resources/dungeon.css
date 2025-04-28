@@ -1,5 +1,6 @@
 .title-screen {
-  -fx-background-color: linear-gradient(to bottom, #001f3f, #000815);
+  -fx-background-image: url("images/titlebg.gif");
+  -fx-background-size: 100%, 100%;
 }
 
 .title-label {
@@ -14,10 +15,13 @@
 }
 
 .start-button {
+  -fx-background-radius: 0;
+  -fx-effect: none;
   -fx-font-size: 20px;
   -fx-padding: 10px 20px;
-  -fx-background-color: linear-gradient(#0f9, #0c7);
-  -fx-text-fill: #000;
+  -fx-background-color: #990000;
+  -fx-text-fill: #fff;
+  -fx-font-weight: bold;
 }
 
 .byline-label {

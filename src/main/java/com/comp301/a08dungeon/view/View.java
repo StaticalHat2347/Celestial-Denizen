@@ -5,6 +5,7 @@ import com.comp301.a08dungeon.model.Model;
 import com.comp301.a08dungeon.model.Observer;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 
 public class View implements FXComponent, Observer {
@@ -27,6 +28,19 @@ public class View implements FXComponent, Observer {
 
   @Override
   public void update() {
-    scene.setRoot(render());
+    Parent newRoot = render();
+    scene.setRoot(newRoot);
+    newRoot.requestFocus();
   }
+
+  public void keyPressed(KeyEvent e) {
+    switch (e.getCode()) {
+      case UP    -> controller.moveUp();
+      case DOWN  -> controller.moveDown();
+      case LEFT  -> controller.moveLeft();
+      case RIGHT -> controller.moveRight();
+      default    -> {}
+    }
+  }
+
 }
