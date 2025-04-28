@@ -6,23 +6,24 @@ import com.comp301.a08dungeon.model.Model;
 import com.comp301.a08dungeon.model.ModelImpl;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class AppLauncher extends Application {
-
     @Override
     public void start(Stage stage) {
-        Model appModel = new ModelImpl(128,32);
-        Controller controller = new ControllerImpl(appModel);
-        View view = new View(controller, appModel);
-        appModel.addObserver(view);
+        stage.setTitle("Celestial Denizen");
+        Model model = new ModelImpl(26, 10);
+        Controller controller = new ControllerImpl(model);
 
+        Scene scene = new Scene(new StackPane(), 854, 480);
+        View view = new View(controller, model, scene);
 
-        Scene scene = new Scene(view.render(), 128,32);
+        scene.setRoot(view.render());
         scene.getStylesheets().add("dungeon.css");
+        model.addObserver(view);
 
         stage.setScene(scene);
-        stage.setTitle("Celestial Denizen"); // knockoff star citizen lol
         stage.show();
     }
 }

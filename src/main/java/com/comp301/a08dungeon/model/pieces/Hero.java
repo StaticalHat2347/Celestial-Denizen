@@ -5,7 +5,7 @@ import com.comp301.a08dungeon.model.board.Posn;
 public class Hero extends APiece implements MovablePiece {
 
   public Hero() {
-    super("Pilot", "abc123");
+    super("Pilot", "/images/hero.png");
   }
 
   public CollisionResult collide(Piece other) {
