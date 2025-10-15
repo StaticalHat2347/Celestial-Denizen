@@ -1,3 +1,3 @@
-this is game
-i make game
+this is game,
+i make game,
 fun game 👍
