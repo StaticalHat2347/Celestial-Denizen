@@ -10,5 +10,5 @@ collect supplies
 there are pirate,  
 pirate boom boom your ship (**game over**),  
 there are asteroid,  
-asteroid boom boom your ship (**game over**),  
+asteroid block your way (**go around**),  
 collect, supply, win.
